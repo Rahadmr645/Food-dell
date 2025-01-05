@@ -1,0 +1,59 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.middle ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    align-items: center;
+}
+.middle ul li {
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+.right {
+    display: flex;
+    gap: 30px;
+}
+
+.right button {
+    border: 1px solid green;
+    border-radius: 20px;
+    background: transparent;
+    width: 150px;
+    padding: 5px;
+}
+.right button:hover {
+    transform: scale(1.07);
+}
+
+.borders {
+    border-bottom: 2px solid tomato !important;
+    color: white;
+    cursor: pointer;
+}
+
+.basket {
+    position: relative;
+    cursor: pointer;
+}
+.dot {
+   position: absolute;
+   width: 5px ;
+   height: 5px;
+   background-color: tomato;
+   top: 0px;
+   right: -2px;
+   border-radius: 50%;
+}
+
+
+.right img {
+    cursor: pointer;
+}

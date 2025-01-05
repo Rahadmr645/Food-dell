@@ -1,13 +1,17 @@
 import { useState } from 'react'
-
 import './App.css'
+import Navbar from './Navbar/Navbar'
+import Hero from './Hero/Hero'
+import Menu from './menu/Menu'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-       <h1>Well come my new world and Rahad you have only 30 days </h1>
+      <Navbar/>
+      <Hero/>
+      <Menu/>
     </>
   )
 }
