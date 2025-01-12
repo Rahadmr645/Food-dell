@@ -15,7 +15,7 @@ const Home = () => {
       <Hero />
       <Menu category={category} SetCategory={SetCategory} />
       <FoodList category={category} />
-      <DownloadApp />
+       <DownloadApp/>
     </div>
   )
 }
