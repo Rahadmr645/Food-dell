@@ -1,47 +1,44 @@
-
 .menu-container {
-    width: 100%;
-    margin-top: 10px;
-    
+  width: 100%;
+  margin-top: 10px;
+  overflow: auto;
+
 }
 
-/* .manu-items{
-    display: flex;
-    gap: 50px;
-   overflow-x: scroll;
-    cursor: pointer;
-    height: auto;
-} */
-
 .manu-items {
-    display: flex;
-    gap: 50px; /* Space between items */
-    overflow-x: scroll; /* Enables horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    height: auto; /* Adjust the height as needed */
-    width: 100%; /* Make sure it takes up the full width */
-    flex-wrap: nowrap; /* Prevent items from wrapping */
-    scroll-behavior: smooth;
-  }
+  display: flex;
+  width: 100%;
+  gap: 50px;
+  overflow-x: scroll;
+  cursor: pointer;
+  scrollbar-color: red green;
+  width: 100%;
+  position: relative;
+  scroll-behavior: smooth;
+  margin-top: 20px;
+  padding-bottom: 10px;
   
-  /* Hide scrollbar for WebKit-based browsers (Chrome, Safari, Edge) */
-  .manu-items::-webkit-scrollbar {
-    width: 0px; /* Hide the scrollbar completely */
-  }
-  
-  /* Hide scrollbar for Firefox */
-  .manu-items {
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
-  }
-  
-  .manu-items div {
-    min-width: 150px; /* Adjust the minimum width of items */
-    flex-shrink: 0; /* Prevent shrinking of items */
-  }
+}
+.manu-items::-webkit-scrollbar{
+  background-color: green;
+  cursor: pointer;
+  border-radius: 10px;
+ 
+}
+.manu-item img{
+  width: 120px;
+}
+.manu-item p {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
 
-.manu-item img {
-    width: 100px;
-    height: 100px;
+.actives {
+  border: 3px solid tomato;
+  border-radius: 50%;
+}
 
+.menu-container p {
+  max-width: 600px;
 }

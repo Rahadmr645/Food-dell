@@ -4,6 +4,7 @@
     height: 70vh;
     margin-top: 5vh;
     background: url('../assets/header_img.png') no-repeat center/cover;
+
 }
 
 .hero-container {
@@ -17,6 +18,7 @@
     gap: 5px;
     display: flex;
     left: 10%;
+    animation: fadeIn 2s ease-in forwards;
 
 }
 .hero-container h1 {
@@ -37,4 +39,42 @@
 }
 .hero-container button:hover {
     transform: scale(1.07);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* responsive for phone */
+
+@media (max-width: 475px) {
+    .hero-container {
+        width: 95%;
+        height: 40vh;
+        margin-top: 20px;
+        position: relative;
+    }
+    .hero-item {
+        position: absolute;
+        bottom: 50px;
+    }
+    .hero-container h1 {
+        font-size: 20px;
+        max-width: 200px;
+    }
+    .hero-container p {
+        font-size: 10px;
+        max-width: 250px;
+    }
+    .hero-container button {
+        width: 100px;
+    }
+
 }

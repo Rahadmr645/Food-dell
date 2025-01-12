@@ -1,17 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Navbar from './Navbar/Navbar'
-import Hero from './Hero/Hero'
-import Menu from './menu/Menu'
+import Footer from './Footer/Footer'
+import Home from './Home/Home'
+import { Routes,Route } from 'react-router-dom'
+import Carts from './carts/Carts'
+
 
 function App() {
-  
-
+ 
   return (
     <>
       <Navbar/>
-      <Hero/>
-      <Menu/>
+     
+     
+
+      {/* Router section */}
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/carts' element={<Carts/>} />
+      </Routes>
+      <Footer/>
     </>
   )
 }
