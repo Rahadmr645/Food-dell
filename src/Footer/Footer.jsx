@@ -25,7 +25,7 @@ const Footer = () => {
                     <p>Delivery</p>
                     <p>Privacy</p>
                 </div>
-                <div className="right-footer">
+                <div className="right-footer" id='contact-us'>
                     <h1>GET IN TOUCH</h1>
                     <p>5419576456</p>
                     <p>rahdmr534@gmail.com</p>

@@ -6,10 +6,10 @@ const Menu = ({category,SetCategory}) => {
  
     const {menu_list} = useContext(StoreContext)
     return (
-        <div className='container menu-container'>
+        <div id='menu' className='container menu-container'>
             <h1>Explore our Menu</h1>
             <p  >Explore our wide range of delicious meals, crafted with fresh ingredients and packed with flavor. Choose from your favorite cuisines and enjoy!</p>
-            <div className="manu-items">
+            <div className="manu-items" >
 
                 {menu_list.map((item, index) => (
                     <div onClick={() => SetCategory(prev=>prev===item.menu_name?'All':item.menu_name)}  key={index} className="manu-item">

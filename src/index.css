@@ -1,3 +1,9 @@
+*{
+  scroll-behavior: smooth;
+  position: relative;
+
+}
+
 body {
   background-color: gray;
   color: white;
