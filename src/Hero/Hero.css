@@ -4,6 +4,7 @@
     height: 70vh;
     margin-top: 5vh;
     background: url('../assets/header_img.png') no-repeat center/cover;
+    border: 1px solid white;
 
 }
 
@@ -56,10 +57,11 @@
 
 @media (max-width: 475px) {
     .hero-container {
-        width: 95%;
+        width: 460px;
         height: 40vh;
         margin-top: 20px;
         position: relative;
+        margin-left: 10px;
     }
     .hero-item {
         position: absolute;

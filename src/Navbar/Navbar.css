@@ -13,10 +13,12 @@
     gap: 50px;
     align-items: center;
 }
+
 .middle ul li {
     cursor: pointer;
     font-size: 1.3rem;
 }
+
 .right {
     display: flex;
     gap: 30px;
@@ -29,6 +31,7 @@
     width: 150px;
     padding: 5px;
 }
+
 .right button:hover {
     transform: scale(1.07);
 }
@@ -43,14 +46,15 @@
     position: relative;
     cursor: pointer;
 }
+
 .dot {
-   position: absolute;
-   width: 5px ;
-   height: 5px;
-   background-color: tomato;
-   top: 0px;
-   right: -2px;
-   border-radius: 50%;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: tomato;
+    top: 0px;
+    right: -2px;
+    border-radius: 50%;
 }
 
 
@@ -63,30 +67,35 @@
 
 @media (max-width: 475px) {
     .navbar-container {
-        width: 100%;
+        width: 475px;
+        margin-right: 0px;
         display: flex;
         flex-direction: column;
-        background: linear-gradient(to right, green,tomato);
+        background: linear-gradient(to right, green, tomato);
         height: auto;
         align-items: start;
         gap: 10px;
         margin-top: 0px;
         padding: 10px;
         position: relative;
+    
     }
+
     .middle ul {
         display: flex;
         /* flex-direction: column; */
-       padding-left: 0px;
+        padding-left: 0px;
         gap: 30px;
         padding-top: 15px;
         width: 100%;
     }
+
     .left img {
-       width: 100px;
-       align-items: start;
-       display: flex;
+        width: 100px;
+        align-items: start;
+        display: flex;
     }
+
     .right {
         display: flex;
         position: absolute;
@@ -94,9 +103,11 @@
         align-items: start;
         gap: 20px;
     }
-    .right > img {
+
+    .right>img {
         width: 30px;
     }
+
     .right button {
         width: 100px;
         padding-left: 5px;

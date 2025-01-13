@@ -42,3 +42,18 @@
 .menu-container p {
   max-width: 600px;
 }
+
+/* respnsov for phone */
+
+@media (max-width: 475px) {
+
+  .menu-container {
+    width: 440px;
+  }
+
+  .manu-item img {
+    width: 70px;
+    height: 70px;
+  }
+   
+}
