@@ -83,7 +83,7 @@
 
     .middle ul {
         display: flex;
-        /* flex-direction: column; */
+       
         padding-left: 0px;
         gap: 30px;
         padding-top: 15px;
