@@ -67,7 +67,7 @@
 
 @media (max-width: 475px) {
     .navbar-container {
-        width: 475px;
+        width: 505px;
         margin-right: 0px;
         display: flex;
         flex-direction: column;
