@@ -114,7 +114,7 @@ label {
 @media (max-width: 475px) {
 
     .login-container {
-        width: 505px;
+        width: 510px;
         height: 130vh;
         display: flex;
         justify-content: center;
@@ -128,7 +128,7 @@ label {
     .login-form {
         position: fixed;
         width: 200px;
-        height: 30vh;
+        height: 32vh;
         display: flex;
         flex-direction: column;
         margin-top: 100px;
