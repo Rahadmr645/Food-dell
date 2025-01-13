@@ -128,7 +128,7 @@ label {
     .login-form {
         position: fixed;
         width: 200px;
-        height: 32vh;
+        height: 35vh;
         display: flex;
         flex-direction: column;
         margin-top: 100px;
