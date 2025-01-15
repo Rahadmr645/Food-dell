@@ -1,10 +1,22 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './Carts.css';
 import { StoreContext } from '../context/StoreConext';
 
 const Carts = () => {
 
   const { cartItems, removeFromCart, food_list } = useContext(StoreContext);
+ 
+  // calculate subtotal and total 
+
+  const Subtotal = food_list.reduce((total, item) => {
+    if(cartItems[item._id] > 0) {
+      return total + item.price * cartItems[item._id];
+    }
+    return total;
+  },0);
+
+  const deliveryFee = Subtotal>0?2:0;
+  const Total = Subtotal + deliveryFee;
 
   return (
     <div className='container cart-container'>
@@ -19,19 +31,22 @@ const Carts = () => {
           <p>Remove</p>
         </div>
         <hr className='title-hr' />
+        
+      {Object.keys(cartItems).length === 0 && <h1>Oops, no pruduct in cart</h1>}
+
       </div>
-      <div className=" cart-info"  >
+      <div className="cart-info"  >
         {food_list.map((item, index) => {
           if (cartItems[item._id] > 0) {
             return (
               <>
-                <div className="carts-item-title ">
+                <div className="cart-item-title cart-foodlist ">
                   <img src={item.image} alt='' />
                   <p>{item.name}</p>
                   <p >{item.price}</p>
                   <p>{cartItems[item._id]}</p>
                   <p>{cartItems[item._id] * item.price}</p>
-                  <p onClick={() => removeFromCart(item._id)}>x</p>
+                  <p style={{cursor:'pointer'}} onClick={() => removeFromCart(item._id)}>x</p>
                 </div>
                 <hr className='hr-row' />
               </>
@@ -44,17 +59,17 @@ const Carts = () => {
           <h1>Carts Total</h1>
           <div className='carts-total-para'>
             <h4>Subtotal</h4>
-            <p>0</p>
+            <p>{Subtotal}$</p>
           </div>
           <hr className='totals-hr' />
           <div className='carts-total-para'>
             <h4>Delivery fee</h4>
-            <p>2</p>
+            <p>{deliveryFee}$</p>
           </div>
           <hr className='totals-hr' />
           <div className='carts-total-para'>
-            <h4>Total</h4>
-            <p>0</p>
+            <h4></h4>
+            <p>{Total}$</p>
           </div>
           <button>PROCEED TO CHACKOUT</button>
         </div>
