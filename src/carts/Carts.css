@@ -8,8 +8,9 @@
     color: tomato;
 }
 
-.cart-item-title {
+.carts-item-title {
     display: grid;
+    width: 100%;
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 0.5fr;
     row-gap: 30px;
     align-items: center;
@@ -27,6 +28,7 @@
 }
 
 .title-hr {
+  width: 100%;
     margin: 3px;
     padding: 2px;
     background-color: white;
@@ -130,7 +132,7 @@
 
     }
 
-    .hr {
+    .title-hr {
         width: 475px;
         margin: 5px;
         padding: 2px;

@@ -22,7 +22,7 @@ const Carts = () => {
     <div className='container cart-container'>
       <h1>Carts</h1>
       <div className="cart-items">
-        <div className="cart-item-title cart-title">
+        <div className="carts-item-title cart-title">
           <p>Item</p>
           <p>Title</p>
           <p>Price</p>
@@ -32,7 +32,9 @@ const Carts = () => {
         </div>
         <hr className='title-hr' />
         
-      {Object.keys(cartItems).length === 0 && <h1>Oops, no pruduct in cart</h1>}
+      {Object.keys(cartItems).length === 0 && <h1
+      style={{marginTop:'30px',color:'tomato',marginLeft:'100px',width:'300px'}}>Oops,<br/>no
+      pruduct in your cart</h1>}
 
       </div>
       <div className="cart-info"  >
@@ -40,7 +42,7 @@ const Carts = () => {
           if (cartItems[item._id] > 0) {
             return (
               <>
-                <div className="cart-item-title cart-foodlist ">
+                <div className="carts-item-title cart-foodlist ">
                   <img src={item.image} alt='' />
                   <p>{item.name}</p>
                   <p >{item.price}</p>
@@ -68,7 +70,7 @@ const Carts = () => {
           </div>
           <hr className='totals-hr' />
           <div className='carts-total-para'>
-            <h4></h4>
+            <h4 style={{color:'tomato'}}>Total</h4>
             <p>{Total}$</p>
           </div>
           <button>PROCEED TO CHACKOUT</button>
