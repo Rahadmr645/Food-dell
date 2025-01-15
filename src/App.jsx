@@ -6,7 +6,7 @@ import Home from './Home/Home'
 import { Routes, Route } from 'react-router-dom'
 import Carts from './carts/Carts'
 import Login from './Login/Login'
-
+import Checkout from './Chackout/Checkout'
 
 function App() {
 
@@ -19,6 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/carts' element={<Carts />} />
+       <Route path='/checkout' element={<Checkout />} />
       </Routes>
       <Footer />
     </>

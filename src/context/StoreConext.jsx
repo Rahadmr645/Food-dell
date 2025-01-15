@@ -13,6 +13,8 @@ const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
 
 
+
+
     const addToCart = (itemId) => {
         if (!cartItems[itemId]) {
             setCartItems((prev) => ({ ...prev, [itemId]: 1 }))
@@ -28,7 +30,7 @@ const StoreContextProvider = (props) => {
             
             // Decrease the quantity of the item
             if (updatedCart[itemId] > 1) {
-                updatedCart[itemId] = 0;
+                updatedCart[itemId] -= 1;
             } else {
                 
                 delete updatedCart[itemId];
@@ -38,7 +40,15 @@ const StoreContextProvider = (props) => {
         });
     };
 
-    
+    const Subtotal = food_list.reduce((total, item) => {
+    if(cartItems[item._id] > 0) {
+      return total + item.price * cartItems[item._id];
+    }
+    return total;
+  },0);
+
+  const deliveryFee = Subtotal>0?2:0;
+  const Total = Subtotal + deliveryFee;
  
     const contextValue = {
         menu_list,
@@ -47,7 +57,9 @@ const StoreContextProvider = (props) => {
         removeFromCart,
         cartItems,
         setCartItems,
-
+         Subtotal,
+         deliveryFee, 
+         Total,
     }
     return (
         <StoreContext.Provider value={contextValue}>

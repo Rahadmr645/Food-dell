@@ -1,22 +1,14 @@
 import React, { useContext, useState } from 'react'
 import './Carts.css';
 import { StoreContext } from '../context/StoreConext';
-
+import { Link } from 'react-router-dom';
 const Carts = () => {
 
-  const { cartItems, removeFromCart, food_list } = useContext(StoreContext);
+  const { cartItems, removeFromCart, food_list,Subtotal,deliveryFee,Total } = useContext(StoreContext);
  
   // calculate subtotal and total 
 
-  const Subtotal = food_list.reduce((total, item) => {
-    if(cartItems[item._id] > 0) {
-      return total + item.price * cartItems[item._id];
-    }
-    return total;
-  },0);
-
-  const deliveryFee = Subtotal>0?2:0;
-  const Total = Subtotal + deliveryFee;
+  
 
   return (
     <div className='container cart-container'>
@@ -45,9 +37,9 @@ const Carts = () => {
                 <div className="carts-item-title cart-foodlist ">
                   <img src={item.image} alt='' />
                   <p>{item.name}</p>
-                  <p >{item.price}</p>
+                  <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
-                  <p>{cartItems[item._id] * item.price}</p>
+                  <p>${cartItems[item._id] * item.price}</p>
                   <p style={{cursor:'pointer'}} onClick={() => removeFromCart(item._id)}>x</p>
                 </div>
                 <hr className='hr-row' />
@@ -58,23 +50,24 @@ const Carts = () => {
       </div>
       <div className='carts-bottom'>
         <div className='carts-totals'>
-          <h1>Carts Total</h1>
+          <h1 style={{marginBottom:'20px'}}>Carts Total</h1>
           <div className='carts-total-para'>
             <h4>Subtotal</h4>
-            <p>{Subtotal}$</p>
+            <p>${Subtotal}</p>
           </div>
           <hr className='totals-hr' />
           <div className='carts-total-para'>
             <h4>Delivery fee</h4>
-            <p>{deliveryFee}$</p>
+            <p>${deliveryFee}</p>
           </div>
           <hr className='totals-hr' />
           <div className='carts-total-para'>
             <h4 style={{color:'tomato'}}>Total</h4>
-            <p>{Total}$</p>
+            <p>${Total}</p>
           </div>
-          <button>PROCEED TO CHACKOUT</button>
-        </div>
+        <Link to='/checkout'  > <button>PROCEED TO CHECKOUT</button>
+        </Link>
+        </div> 
         <div className="promocode">
           <h4>If you have any promocode, Enter it here</h4>
           <input type='text' placeholder='promo code' />
